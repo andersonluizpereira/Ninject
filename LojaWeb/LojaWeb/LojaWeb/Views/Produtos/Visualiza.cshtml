@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Visualiza";
+}
+
+<h2>Produto - @Model.Nome</h2>
+
+<form action="@Url.Action("Atualiza", "Produtos")" method="post">
+    <input type="hidden" name="produto.Id" value="@Model.Id" />
+    <label>
+        Nome:
+        <input type="text" name="produto.Nome" value="@Model.Nome" />
+    </label>
+    <label>
+        Preco:
+        <input type="text" name="produto.Preco" value="@Model.Preco" />
+    </label>
+    <label>
+        Categoria:
+        @if(Model.Categoria != null) {
+            <input type="text" name="produto.Categoria.Id" value="@Model.Categoria.Id" />
+        } else {
+            <input type="text" name="produto.Categoria.Id" />   
+        }
+        
+
+       
+
+    </label>
+    <input type="submit" value="Alterar" />
+</form>

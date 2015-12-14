@@ -1,0 +1,18 @@
+﻿@model System.Collections.Generic.IEnumerable<LojaWeb.Entidades.Produto>
+
+@{
+    ViewBag.Title = "ProdutosDaCategoria";
+}
+
+<h2>Produtos Da Categoria</h2>
+
+<form action="@Url.Action("ProdutosDaCategoria", "Produtos")" method="get">
+    <label>
+        Nome Da Categoria: 
+        <input name="nomeCategoria" type="text" value="@ViewBag.NomeCategoria"/>
+    </label>
+    
+    <input type="submit" value="Buscar"/>
+</form>
+
+@Html.Partial("_ListaProdutos", @Model)

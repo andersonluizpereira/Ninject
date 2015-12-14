@@ -1,0 +1,27 @@
+﻿@Html.ActionLink("Novo Produto", "Form", "Produtos")
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            @*<th>Categoria</th>*@
+            <th>Visualizar</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var produto in @Model) 
+        {
+            <tr>
+                <td>@produto.Id</td>
+                <td>@produto.Nome</td>
+                <td>@produto.Preco</td>
+                @*<td>@produto.Categoria.Nome</td>*@
+                <td><a href="@Url.Action("Visualiza", "Produtos", new {id = produto.Id})">Visualizar</a></td>
+                <td><a href="@Url.Action("Remove", "Produtos", new {id = produto.Id})">Remover</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

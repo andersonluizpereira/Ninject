@@ -1,0 +1,25 @@
+﻿@Html.ActionLink("Novo Usuário", "Form", "Usuarios")
+@Html.ActionLink("Nova Pessoa Física", "FormPessoaFisica", "Heranca")
+@Html.ActionLink("Nova Pessoa Jurídica", "FormPessoaJuridica", "Heranca")
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Visualizar</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var usuario in @Model) 
+        {
+            <tr>
+                <td>@usuario.Id</td>
+                <td>@usuario.Nome</td>
+                <td><a href="@Url.Action("Visualiza", "Usuarios", new {id = usuario.Id})">Visualizar</a></td>
+                <td><a href="@Url.Action("Remove", "Usuarios", new {id = usuario.Id})">Remover</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

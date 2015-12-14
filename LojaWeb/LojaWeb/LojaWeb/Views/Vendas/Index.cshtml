@@ -1,0 +1,28 @@
+﻿@model System.Collections.Generic.IEnumerable<LojaWeb.Entidades.Venda>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Vendas</h2>
+
+@Html.ActionLink("Comprar", "ListaProdutos", "Vendas")
+
+<table>
+    <thead>
+        <tr>
+            <th>Usuário</th>
+            <th>Produtos</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var venda in @Model)
+        {
+            <tr>
+                <td>@venda.Cliente.Nome</td>
+                <td>
+                    @(string.Join(", ", from p in venda.Produtos select p.Nome))
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

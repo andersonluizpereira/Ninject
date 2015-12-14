@@ -1,0 +1,12 @@
+﻿@model System.Collections.Generic.IEnumerable<LojaWeb.Entidades.Produto>
+
+@{
+    ViewBag.Title = "ListaPaginada";
+}
+
+<h2>Lista Paginada</h2>
+
+@Html.Partial("_ListaProdutos", @Model)
+
+<a href="@Url.Action("ListaPaginada", "Produtos", new {pagina = ViewBag.Pagina - 1})">anterior</a>
+<a href="@Url.Action("ListaPaginada", "Produtos", new {pagina = ViewBag.Pagina + 1})">próxima</a>

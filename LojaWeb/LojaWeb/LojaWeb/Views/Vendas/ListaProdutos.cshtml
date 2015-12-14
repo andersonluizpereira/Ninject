@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "ListaProdutos";
+}
+
+<h2>ListaProdutos</h2>
+
+@Html.ActionLink("Fechar Pedido", "FechaPedido", "Vendas")
+@Html.ActionLink("Limpar o carrinho", "LimpaCarrinho", "Vendas")
+
+Produtos no carrinho: @ViewBag.ProdutosNoCarrinho
+
+<table>
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Comprar?</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in @Model)
+        {
+            <tr>
+                <td>@produto.Nome</td>
+                <td>@produto.Categoria.Nome</td>
+                <td>@produto.Preco</td>
+                <td>@Html.ActionLink("Comprar", "AdicionaProduto", new {produtoId=produto.Id})</td>
+            </tr>
+        }
+    </tbody>
+</table>

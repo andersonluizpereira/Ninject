@@ -1,0 +1,18 @@
+﻿@model System.Collections.Generic.IEnumerable<LojaWeb.Entidades.Produto>
+
+@{
+    ViewBag.Title = "ProdutosComPrecoMinimo";
+}
+
+<h2>Produtos Com Preço Minimo</h2>
+
+<form action="@Url.Action("ProdutosComPrecoMinimo", "Produtos")" method="get">
+    <label>
+        Preço Mínimo: 
+        <input name="preco" type="text" value="@ViewBag.Preco"/>
+    </label>
+    
+    <input type="submit" value="Buscar"/>
+</form>
+
+@Html.Partial("_ListaProdutos", @Model)

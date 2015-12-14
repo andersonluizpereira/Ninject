@@ -1,0 +1,8 @@
+﻿@model System.Collections.Generic.IEnumerable<LojaWeb.Entidades.Categoria>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Categorias</h2>
+
+@Html.Partial("_ListaCategorias", @Model)

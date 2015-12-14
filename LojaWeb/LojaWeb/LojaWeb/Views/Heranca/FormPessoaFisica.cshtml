@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "FormPessoaFisica";
+}
+
+<h2>Nova Pessoa Física</h2>
+
+<form action="@Url.Action("AdicionaPessoaFisica", "Heranca")" method="post">
+    <label>
+        Nome:
+        <input type="text" name="pessoaFisica.Nome" />
+    </label>
+    <label>
+        CPF:
+        <input type="text" name="pessoaFisica.CPF" />
+    </label>
+    
+    <input type="submit" />
+</form>

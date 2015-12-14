@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
+  <session-factory>
+    <property name="connection.provider">
+      NHibernate.Connection.DriverConnectionProvider
+    </property>
+    <property name="dialect">
+      NHibernate.Dialect.MySQLDialect
+    </property>
+    <property name="connection.driver_class">
+      NHibernate.Driver.MySqlDataDriver
+    </property>
+    <property name="connection.connection_string">
+      Server=localhost;Database=loja; Uid=root; Pwd=;
+    </property>
+    <property name="hbm2ddl.auto">update</property>
+    <property name="show_sql">true</property>
+    <property name="format_sql">true</property>
+    <!-- Implementando cache na linha abaixo-->
+
+    <property name="cache.use_second_level_cache">true</property>
+
+    <property name="cache.provider_class">NHibernate.Caches.SysCache.SysCacheProvider,NHibernate.Caches.SysCache </property>
+
+    
+    <!-- Habilitando o cache para aplicác... manterem a consulta -->
+    <property name="cache.use_query_cache">true</property>
+    
+  </session-factory>
+  
+</hibernate-configuration>

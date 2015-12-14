@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Intranet de GORDINHO";
+}
+
+<h3>Produtos:</h3>
+<ul>
+    <li>@Html.ActionLink("Cadastro De Produtos", "Form", "Produtos")</li>
+    <li>@Html.ActionLink("Lista De Produtos", "Index", "Produtos")</li>
+    <li>@Html.ActionLink("Busca de Produtos por Preço", "ProdutosComPrecoMinimo", "Produtos")</li>
+    <li>@Html.ActionLink("Busca de Produtos por Nome de Categoria", "ProdutosDaCategoria", "Produtos")</li>
+    <li>@Html.ActionLink("Busca de Produtos por Nome de Categoria e Preço", "ProdutosDaCategoriaComPrecoMinimo", "Produtos")</li>
+    <li>@Html.ActionLink("Busca Dinâmica de Produtos", "BuscaDinamica", "Produtos")</li>
+    <li>@Html.ActionLink("Lista de Produtos Paginada", "ListaPaginada", "Produtos")</li>
+</ul>
+
+<h3>Categorias</h3>
+<ul>
+    <li>@Html.ActionLink("Cadastro de Categorias", "Form", "Categorias")</li>
+    <li>@Html.ActionLink("Lista De Categorias", "Index", "Categorias")</li>
+    <li>@Html.ActionLink("Busca De Categorias Por Nome", "BuscaPorNome", "Categorias")</li>
+    <li>@Html.ActionLink("Quantidade de Produtos por Categoria", "NumeroDeProdutosPorCategoria", "Categorias")</li>
+    <li>@Html.ActionLink("Lista de Categorias E Produtos", "CategoriasEProdutos", "Categorias")</li>
+</ul>
+
+<h3>Usuários</h3>
+<ul>
+    <li>@Html.ActionLink("Cadastro de Usuários", "Form", "Usuarios")</li>
+    <li>@Html.ActionLink("Lista de Usuários", "Index", "Usuarios")</li>
+    <li>@Html.ActionLink("Nova Pessoa Física", "FormPessoaFisica", "Heranca")</li>
+    <li>@Html.ActionLink("Nova Pessoa Jurídica", "FormPessoaJuridica", "Heranca")</li>
+</ul>
+
+<h3>Vendas</h3>
+<ul>
+    <li>@Html.ActionLink("Lista de Vendas", "Index", "Vendas")</li>
+    <li>@Html.ActionLink("Comprar", "ListaProdutos", "Vendas")</li>
+</ul>

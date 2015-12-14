@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "CategoriasEProdutos";
+}
+
+<h2>CategoriasEProdutos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Produtos</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categoria in @Model)
+        {
+            <tr>
+                <td>@categoria.Id</td>
+                <td>@categoria.Nome</td>
+                <td>
+                    @foreach (var produto in @categoria.Produtos)
+                    {
+                        @(produto.Nome + " | ")
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

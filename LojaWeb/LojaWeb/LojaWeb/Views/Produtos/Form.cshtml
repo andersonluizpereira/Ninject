@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Form";
+}
+
+<h2>Novo Produto</h2>
+
+<form action="@Url.Action("Adiciona", "Produtos")" method="post">
+    <label>
+        Nome:
+        <input type="text" name="produto.Nome" />
+    </label>
+    <label>
+        Preco:
+        <input type="text" name="produto.Preco" />
+    </label>
+    <label>
+        Categoria:
+       <!-- <input type="text" name="produto.Categoria.Id"/>-->
+        <select name="produto.Categoria.Id">
+            
+            <option value="">Sem Categoria</option>
+            @foreach (var categoria in Model) { 
+               
+                
+                
+                    <option value="@categoria.Id">@categoria.Nome</option>
+            }
+
+
+        </select>
+
+    </label>
+
+    <input type="submit" value="Adicionar"/>
+</form>

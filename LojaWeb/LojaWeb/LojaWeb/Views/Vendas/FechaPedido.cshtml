@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Fecha Pedido";
+}
+
+<h2>Fechar Pedido</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var produto in @Model) 
+        {
+            <tr>
+                <td>@produto.Nome</td>
+                <td>@produto.Preco</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+Escolha o usuário para o pedido:
+
+<form action="@Url.Action("CompletaPedido", "Vendas")" method="post">
+    <select name="usuarioId">
+        @foreach (var usuario in @ViewBag.Usuarios)
+        {
+            <option value="@usuario.Id">@usuario.Nome</option>
+        }
+    </select>
+    <input type="submit" value="Comprar"/>
+</form>

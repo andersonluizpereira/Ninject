@@ -1,0 +1,23 @@
+﻿@Html.ActionLink("Nova Categoria", "Form", "Categorias")
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Visualizar</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var categoria in @Model) 
+        {
+            <tr>
+                <td>@categoria.Id</td>
+                <td>@categoria.Nome</td>
+                <td><a href="@Url.Action("Visualiza", "Categorias", new {id = categoria.Id})">Visualizar</a></td>
+                <td><a href="@Url.Action("Remove", "Categorias", new {id = categoria.Id})">Remover</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

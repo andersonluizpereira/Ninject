@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="LojaWeb" namespace="LojaWeb.Entidades">
+  <class name="Produto">
+    <cache usage="nonstrict-read-write" />
+    <id name="Id">
+      <generator class="identity"/>
+    </id>
+    <property name="Nome"/>
+    <property name="Preco"/>
+    
+    <many-to-one name="Categoria" column="CategoriaId" />
+  
+  </class>
+</hibernate-mapping>
